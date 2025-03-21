@@ -1,0 +1,14 @@
+Spring boot-framework- make use of setup all the apis and running the application
+JPA (Hibernate ) - dependency we use + MySql - database we use-configure db, scheme
+Lombok-tool use to reduce a lot of boilerplate  codes
+Intellij- any ide can use
+Thymeleaf server side templating engine + Bootstrap for styling you application, configure bootstrap into the application and use
+--------------------------------------------
+1.List all apis / operations u would perform on  the project (CRUD operations)
+2.spring initializer-
+     dependencies-
+	WEB-since it's a web application
+	JPA-have to persist data into data storage ,make use of database MySQL 
+	also needMySQL drive along with JPA-- to interact the application with the db then respective driver needed
+	Lombok- it's a library that make use of annotations to reduce boilerplate code
+
