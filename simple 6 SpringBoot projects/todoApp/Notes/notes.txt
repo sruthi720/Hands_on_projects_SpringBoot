@@ -1,0 +1,22 @@
+dependencies->
+1. WEB --since its is web application
+2.JPA -- to persist data in database
+3.mysql Driver -- to interact my application with mysql database
+4.Lombok -- let you use annotations, thereby reduce the use of boilerplate code. Eg. using @getter ,@setter ,instead of using setter getter functions
+5.thymeleaf- serverside template, for ui purposes
+
+step4->
+Class-inside the model package with @entity annotation is converted by the jpa as table in th database. Also, the variables  of classes are the columns of the table
+@Entity,@id,@Generatedvalue ->check
+@Data-lombok , used for getters and setters
+
+step5->
+create repository interface, extend with jpa repository which provides some predefined methods
+* Whenever you have configured the DB with your appln.->
+ repository can be class or interface that connect the application with a database. Allowing you to see, retrieve, update and delete the data--CRUD operations
+* JPA repository tell that u have JPA configured and entity configured-- interact with DB i can give u some predefined methods create, delete,update and retrieve
+ for that specify ->JPARepository interface, along with the entity name  for which you are using repository and type of  primarykey (id)
+ ie.CRUD operations. are managed by JpaRepository
+ * after running the application. on db -->   select * from `todo-app`.task;
+
+ step6->
