@@ -3,3 +3,5 @@ public repository containing basic springoot projects created for learning purpo
 
 Project -1
 ------------ > Basic CRUD oprations are included !
+project -2
+------------ >ToDo Application
