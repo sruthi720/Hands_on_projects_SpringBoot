@@ -19,4 +19,33 @@ create repository interface, extend with jpa repository which provides some pred
  ie.CRUD operations. are managed by JpaRepository
  * after running the application. on db -->   select * from `todo-app`.task;
 
- step6->
+ step6->create controller package-> it has all endpoints. It'll do the job of interfacing with the client.
+ Create service package. Task service dependency injected on the controller
+ service layer will have all the logic of fetching and managing the data. The Controller just does the job of intercepting the request before or after they hit the controller.
+
+ 1.Mapping that do all the task fetches from the application
+ 🟢 The controller:
+ Just receives the HTTP request (like from Postman or frontend).
+ Does not process or calculate anything.
+ Simply pass the request to the service layer.
+ 🟢 The service layer:
+ Contains all the actual logic (like business rules, validation, calculations).
+ Interacts with the repository layer or database.
+ Then return a result back to the controller.
+ 🟢 The controller then returns the result back as an HTTP response.
+Thymeleaf is used here, u have to return template name. and this template should have aces to the list of all the tasks .because you have to displayy the task in to the ui or interface
+we are passing the list data to the template -> tasks.html
+@requestmaping, @getmapping , check.
+
+
+step7->create thymeleaf template. give-- xmlns url
+run the project -> //localhost:8080 will have todo application.
+After enabling @Requestmapping(/tasks) -> url changes to //localhost:8080/tasks.So the particular tasks.html template  being renderd when you access the root url. now we need to display all the tasks here.
+
+2. postmapping--> createTask
+@Request param-> how to pass the request parameter from api call to thymleaf
+once you created the task tasks should be refreshed-- for that return "redirect:/"
+
+simply create a form in the frontend so that user can give you name of task.once  submited u will receive to the daa to the frontend.
+form, action-> whatever data got, being posted on this '/' url.
+@pathvariable-> we are accepting something from the path, it tells look into path.

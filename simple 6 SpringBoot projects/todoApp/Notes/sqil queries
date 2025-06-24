@@ -1,0 +1,9 @@
+➡️select * from `todo-app`.task;
+➡️insert into `todo-app`.task(`id`,`compleated`,`title`)
+values(1,0,'Test');       ->string should be in quotes
+➡️insert into `todo-app`.task(`id`,`completed`,`title`)
+values(2,0,'Test2');
+
+➡️SET SQL_SAFE_UPDATES = 0;
+➡️DELETE FROM `todo-app`.task;
+➡️DROP TABLE `todo-app`.task;
