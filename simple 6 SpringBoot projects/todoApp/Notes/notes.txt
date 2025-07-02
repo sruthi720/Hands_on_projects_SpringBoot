@@ -1,0 +1,51 @@
+dependencies->
+1. WEB --since its is web application
+2.JPA -- to persist data in database
+3.mysql Driver -- to interact my application with mysql database
+4.Lombok -- let you use annotations, thereby reduce the use of boilerplate code. Eg. using @getter ,@setter ,instead of using setter getter functions
+5.thymeleaf- serverside template, for ui purposes
+
+step4->
+Class-inside the model package with @entity annotation is converted by the jpa as table in th database. Also, the variables  of classes are the columns of the table
+@Entity,@id,@Generatedvalue ->check
+@Data-lombok , used for getters and setters
+
+step5->
+create repository interface, extend with jpa repository which provides some predefined methods
+* Whenever you have configured the DB with your appln.->
+ repository can be class or interface that connect the application with a database. Allowing you to see, retrieve, update and delete the data--CRUD operations
+* JPA repository tell that u have JPA configured and entity configured-- interact with DB i can give u some predefined methods create, delete,update and retrieve
+ for that specify ->JPARepository interface, along with the entity name  for which you are using repository and type of  primarykey (id)
+ ie.CRUD operations. are managed by JpaRepository
+ * after running the application. on db -->   select * from `todo-app`.task;
+
+ step6->create controller package-> it has all endpoints. It'll do the job of interfacing with the client.
+ Create service package. Task service dependency injected on the controller
+ service layer will have all the logic of fetching and managing the data. The Controller just does the job of intercepting the request before or after they hit the controller.
+
+ 1.Mapping that do all the task fetches from the application
+ 🟢 The controller:
+ Just receives the HTTP request (like from Postman or frontend).
+ Does not process or calculate anything.
+ Simply pass the request to the service layer.
+ 🟢 The service layer:
+ Contains all the actual logic (like business rules, validation, calculations).
+ Interacts with the repository layer or database.
+ Then return a result back to the controller.
+ 🟢 The controller then returns the result back as an HTTP response.
+Thymeleaf is used here, u have to return template name. and this template should have aces to the list of all the tasks .because you have to displayy the task in to the ui or interface
+we are passing the list data to the template -> tasks.html
+@requestmaping, @getmapping , check.
+
+
+step7->create thymeleaf template. give-- xmlns url
+run the project -> //localhost:8080 will have todo application.
+After enabling @Requestmapping(/tasks) -> url changes to //localhost:8080/tasks.So the particular tasks.html template  being renderd when you access the root url. now we need to display all the tasks here.
+
+2. postmapping--> createTask
+@Request param-> how to pass the request parameter from api call to thymleaf
+once you created the task tasks should be refreshed-- for that return "redirect:/"
+
+simply create a form in the frontend so that user can give you name of task.once  submited u will receive to the daa to the frontend.
+form, action-> whatever data got, being posted on this '/' url.
+@pathvariable-> we are accepting something from the path, it tells look into path.

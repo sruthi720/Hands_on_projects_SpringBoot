@@ -1,0 +1,28 @@
+Real time chat application
+--------------------------
+ Backend
+spring boot
+spring socket- enables real time communications over websockets, it forms base for live messaging features 
+Spring messaging(STOM Protocol)- it manages the measaging betwwen the cient and server over websocket, if you are building groups there will be people joining the chat room thgt means they are subscribed to that group or chatrom.all that subscription is managed by STOM protocol
+thymleaf - server side templating engine.which is dynamically render html elements
+
+ Frontend
+Tymeleaf
+javascript(ES6)
+SockJS-provides websocket like communication and handles any sort of fallback optionsif websocket support is unavailable
+STOM.js- is a library used to get the stom protcol in the frotend
+HTML/CSS
+Bootstrap
+
+ Development and infrastructure tools
+maven/gradle
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+step1 - defining the configuration for websocket .It provides a continious connection or a 2 way channel between client and server , thts what web socket is.STOM -it sit on the top of web socket and  it gives a structure(how messges routed, orgaized ..etc)  to the communication(the messages we pass between client and server) tht we do
+ - mesage broking - is a way of routing messages. eg: a websocket communication is happening.there is a message that arrives.where should that messge goesand in which chat room ,thts what is decided by messge broker
+@Configuration
+@EnableWebSocketMessageBroker
+registerStompEndpoints-defining an endpoint for websocket connections(localhost:8080/chat). 
+setalowedorigin- we wann entertein request onlythrough this URL
+step2- chatController- will handle the all incoming messages that's being sent from the frontend and it is going to broadcast it to all  the client
+@messageMapping -maps websocket messages to the destination(here -URL)
