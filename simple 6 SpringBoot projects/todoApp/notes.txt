@@ -1,6 +1,0 @@
-dependencies->
-1. WEB --since its is web application
-2.JPA -- to persist data in database
-3.mysql Driver -- to interact my application with mysql database
-4.Lombok -- let you use annotatiions thereby reduce the use of boilerplate code. Eg. using @getter ,@setter ,instead of using setter getter functions 
-5.tymeleaf- server side template ,ui purpose
