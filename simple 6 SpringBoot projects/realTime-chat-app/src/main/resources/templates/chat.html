@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Real-Time-Chat-App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">`
 </head>
 <body>
-<h1>Real-Time-Chat-App</h1>
+    <div class="container mt-4">
+        <h1 class="text-center">Real-Time-Chat-Application</h1>
+<!--        chat window and user type messages-->
+        <div id="chat"
+        class="border rounded p-3 mb-3"
+        style="height:300px; overflow:y; auto; "></div>
+
+        <div class="input-group mb-3">
+            <input id="sender-input" type="text" class="form-control"
+            placeholder="your name....">
+        </div>
+        <div class="input-group mb-3">
+            <input id="message-input" type="text" class="form-control"
+                   placeholder="your name....">
+        </div>
+    </div>
+
 </body>
 </html>
